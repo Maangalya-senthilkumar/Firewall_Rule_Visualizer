@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firewall Rule Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="background-color: #4CAF50;">Firewall Rule Visualizer</h1>
+    <form id="rule-form">
+        <input type="text" id="rule-name" placeholder="Rule Name" required>
+        <input type="text" id="source-ip" placeholder="Source IP" required>
+        <input type="text" id="dest-ip" placeholder="Destination IP" required>
+        <select id="action">
+            <option value="allow">Allow</option>
+            <option value="deny">Deny</option>
+        </select>
+        <input type="text" id="protocol" placeholder="Protocol (TCP/UDP)" required>
+        <input type="text" id="port" placeholder="Port Number" required>
+        <button type="submit">Add Rule</button>
+    </form>
+    <table id="rule-table">
+        <thead>
+            <tr>
+                <th>Rule Name</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Action</th>
+                <th>Protocol</th>
+                <th>Port</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Traffic Analysis</h2>
+    <div class="charts-container">
+        <canvas id="trafficChart" width="200" height="200"></canvas>
+        <canvas id="pieChart" width="200" height="200"></canvas>
+        <canvas id="lineChart" width="200" height="200"></canvas>
+        <canvas id="radarChart" width="200" height="200"></canvas>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
